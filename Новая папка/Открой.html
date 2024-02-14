@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валентинка для Ирочки</title>
+    <link rel="stylesheet" href="a/style.css"/>
+</head>
+<body>
+    <div class="wrapper"> 
+        <h2 class="question">Ирочка ты моя балбесинка?</h2> 
+        <!-- В h2 меняешь текст на какой хочешь, после переходишь в css и выравниваешь гифку под текст через margin-right в классе gif, со второй страницей также (Yes.html), только 
+        работаешь уже с классом gif2. Его нет в css, просто копипастишь gif -->
+        <img class="gif" alt="gif" src="https://i.gifer.com/6kb.gif"/>
+        <div class="btn-group">
+            <button class="btn" id = "yesButton" onclick="nextPage()">да</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()">неа</button>
+            <script>
+                function nextPage() {
+                    window.location.href = "a/yes.html";
+                }
+                
+                function moveButton() {
+                    var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
+                    var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
+                    document.getElementById('noButton').style.left = `${x}px`;
+                    document.getElementById('noButton').style.top = `${y}px`;
+                }
+            </script> 
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
